@@ -1,10 +1,10 @@
 module ArtistsHelper
 
   def display_artist(song)
-    if self.artist.blank?
-      render 'songs/edit'
+    if song.artist.try(:name).blank?
+      link_to "Add Artist", edit_song_path(song)
     else
-      render 'songs/show'
+      link_to song.artist_name, artist_path(song.artist)
     end
   end
 end
