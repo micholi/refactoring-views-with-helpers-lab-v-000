@@ -5,5 +5,6 @@ module ArtistsHelper
       render 'songs/edit'
     else
       render 'songs/show'
+    end
   end
 end
